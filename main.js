@@ -5,8 +5,8 @@ function createChristmasTree(levels, filepath) {
     const width = levels * 6; // примерная ширина елки
 
     // Верхушка
-    output += ' '.repeat(width / 2) + 'W\n';
-    output += ' '.repeat(width / 2) + '*\n';
+    output += ' '.repeat((width - 1) / 2) + 'W\n';
+    output += ' '.repeat((width - 1) / 2) + '*\n';
 
     // "Этажи" ёлки
     for (let i = 1; i <= levels; i++) {
