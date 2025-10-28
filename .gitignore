@@ -1,0 +1,6 @@
+# Test output files
+test_tree_*.txt
+
+# OS files
+.DS_Store
+
