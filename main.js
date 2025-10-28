@@ -1,3 +1,5 @@
+module.exports = { createChristmasTree };
+
 function createChristmasTree(levels, filepath) {
     const fs = require('fs');
     
@@ -17,14 +19,14 @@ function createChristmasTree(levels, filepath) {
         } else {
             line = '*' + line + '*';
         }
-        const padding = ' '.repeat((width - line.length) / 2);
-        output += padding + line + '\n';
+        const padding = Math.max(0, Math.floor((width - line.length) / 2));
+        output += ' '.repeat(padding) + line + '\n';
     }
 
     // Ствол
     for (let i = 0; i < 2; i++) {
-        const padding = ' '.repeat((width - 5) / 2);
-        output += padding + 'TTTTT\n';
+        const padding = Math.max(0, Math.floor((width - 5) / 2));
+        output += ' '.repeat(padding) + 'TTTTT\n';
     }
 
     fs.writeFileSync(filepath, output, 'utf-8');
